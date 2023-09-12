@@ -7,6 +7,8 @@ export const getGifs = async (category) => {
         title: img.title,
         url: img.images.downsized_medium.url
     }))
+    //timeout para pruebas de espera
+    //await new Promise(resolve => setTimeout(resolve, 3000));
     //console.log('gifs',gifs);
     return gifs;
 }

@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import { getGifs } from "../helpers/getGifs"
 import { GifItem } from "./GifItem";
 import { useFetchGifs } from "../hooks/useFetchGifs";
 
@@ -13,11 +11,19 @@ export const GifGrid = ({ category }) => {
     return (
         <>
             <h3>{category}</h3>
-            <div className="card-grid">
-                {/* images.map */}
-                {images.map((img) => <GifItem key={img.id}
-                    {...img} />)} {/*esparcir las propiedades */}
-            </div>
+            {
+                isLoading ?
+                    (
+                        <h2>Cargando...</h2>
+                    ) : (
+                        <div className="card-grid">
+                            {/* images.map */}
+                            {images.map((img) => <GifItem key={img.id}
+                                {...img} />)} {/*esparcir las propiedades */}
+                        </div>
+                    )
+            }
+
         </>
     )
 }
