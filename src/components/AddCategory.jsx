@@ -1,8 +1,9 @@
 // para crear un componente shortcut rafc
 
 import { useState } from "react"
+import { PropTypes } from "prop-types"
 
-export const AddCategory = ({onNewCategory}) => { //onAddonCategory
+export const AddCategory = ({ onNewCategory }) => { //onAddonCategory
 
     const [inputValue, setInputValue] = useState('');
 
@@ -16,7 +17,7 @@ export const AddCategory = ({onNewCategory}) => { //onAddonCategory
     const onSubmit = (event) => {
         event.preventDefault();
 
-        if(inputValue.trim().length <= 1) return;
+        if (inputValue.trim().length <= 1) return;
         //console.log(event);
         //console.log(inputValue);
         //console.log(onAddCategory);
@@ -26,8 +27,8 @@ export const AddCategory = ({onNewCategory}) => { //onAddonCategory
     }
 
     return (
-        <form onSubmit={onSubmit}>
-            <input 
+        <form onSubmit={onSubmit} aria-label="form">
+            <input
                 type="text"
                 placeholder="Buscar Gifs"
                 value={inputValue}
@@ -36,4 +37,8 @@ export const AddCategory = ({onNewCategory}) => { //onAddonCategory
         </form>
 
     )
+}
+
+AddCategory.propTypes = {
+    onNewCategory: PropTypes.func.isRequired
 }
