@@ -16,4 +16,11 @@ describe('Pruebas en el componente <GifExpertApp/>', () => {
         //const addCategory = await screen.findByTestId('add-category');
         //console.log(addCategory);
      })
+
+     test('Elemento de busqueda por defecto One Punch', async() => { 
+
+        render(<GifExpertApp/>);
+        //const addCategory = await screen.findByTestId('add-category');
+        //console.log(addCategory);
+     })
  })
